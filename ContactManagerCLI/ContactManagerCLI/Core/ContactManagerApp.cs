@@ -1,0 +1,298 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
+using ContactManagerCLI.Models;
+using ContactManagerCLI.Services;
+
+namespace ContactManagerCLI.Core
+{
+    public class ContactManagerApp
+    {
+        private readonly ContactService _service;
+
+        public ContactManagerApp(ContactService service)
+        {
+            _service = service;
+        }
+
+        public async Task Run()
+        {
+            await _service.LoadAsync();
+
+            var existing = _service.GetAllContacts().ToList();
+            if (existing.Any())
+            {
+                Console.WriteLine("Existing Contacts:");
+                DisplayContacts(existing, 1, 10);
+            }
+
+            while (true)
+            {
+                ShowMenu();
+                Console.Write("Select an option: ");
+                var input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1": await AddContact(); break;
+                    case "2": await EditContact(); break;
+                    case "3": await DeleteContact(); break;
+                    case "4": ViewContact(); break;
+                    case "5": ListContacts(); break;
+                    case "6": SearchContacts(); break;
+                    case "7": FilterContacts(); break;
+                    case "8": await SaveContacts(); break;
+                    case "9":
+                        await SaveContacts();
+                        Console.WriteLine("Goodbye!");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid option.");
+                        break;
+                }
+            }
+        }
+
+        private void ShowMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Contact Manager CLI");
+            Console.WriteLine("1. Add Contact");
+            Console.WriteLine("2. Edit Contact");
+            Console.WriteLine("3. Delete Contact");
+            Console.WriteLine("4. View Contact");
+            Console.WriteLine("5. List Contacts");
+            Console.WriteLine("6. Search");
+            Console.WriteLine("7. Filter");
+            Console.WriteLine("8. Save");
+            Console.WriteLine("9. Exit");
+        }
+
+        private async Task AddContact()
+        {
+            Console.Write("Name: ");
+            var name = Console.ReadLine() ?? "";
+
+            Console.Write("Phone: ");
+            var phone = Console.ReadLine() ?? "";
+
+            Console.Write("Email: ");
+            var email = Console.ReadLine() ?? "";
+
+            var contact = new Contact();
+            contact.Name = name;
+            contact.Phone = phone;
+            contact.Email = email;
+            contact.CreatedAt = DateTime.UtcNow;
+            contact.Id = Guid.NewGuid();
+
+            var (valid, error) = _service.ValidateContact(contact);
+            if (!valid)
+            {
+                Console.WriteLine($"Error: {error}");
+                return;
+            }
+
+            _service.AddContact(contact);
+            
+
+            Console.WriteLine("Contact added.");
+        }
+
+        private async Task EditContact()
+        {
+            Console.Write("Enter Contact Id: ");
+            if (!Guid.TryParse(Console.ReadLine(), out var id))
+            {
+                Console.WriteLine("Invalid Id.");
+                return;
+            }
+
+            var contact = _service.GetContactById(id);
+            if (contact == null)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+            Console.Write($"Name ({contact.Name}): ");
+            var name = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(name))
+                contact.Name = name;
+
+            Console.Write($"Phone ({contact.Phone}): ");
+            var phone = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(phone))
+                contact.Phone = phone;
+
+            Console.Write($"Email ({contact.Email}): ");
+            var email = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(email))
+                contact.Email = email;
+
+            var (valid, error) = _service.ValidateContact(contact);
+            if (!valid)
+            {
+                Console.WriteLine($"Error: {error}");
+                return;
+            }
+
+            _service.UpdateContact(contact);
+            
+
+            Console.WriteLine("Contact updated.");
+        }
+
+        private async Task DeleteContact()
+        {
+            Console.Write("Enter Contact Id: ");
+            if (!Guid.TryParse(Console.ReadLine(), out var id))
+            {
+                Console.WriteLine("Invalid Id.");
+                return;
+            }
+
+            _service.DeleteContact(id);
+            await _service.SaveAsync();
+
+            Console.WriteLine("Contact deleted (if existed).");
+        }
+
+        private void ViewContact()
+        {
+            Console.Write("Enter Contact Id: ");
+            if (!Guid.TryParse(Console.ReadLine(), out var id))
+            {
+                Console.WriteLine("Invalid Id.");
+                return;
+            }
+
+            var contact = _service.GetContactById(id);
+            if (contact == null)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+            DisplayContact(contact);
+        }
+
+        private void ListContacts()
+        {
+            var contacts = _service.GetAllContacts().ToList();
+
+            if (!contacts.Any())
+            {
+                Console.WriteLine("No contacts found.");
+                return;
+            }
+
+            PaginateContacts(contacts);
+        }
+
+        private void SearchContacts()
+        {
+            Console.Write("Enter name to search: ");
+            var name = Console.ReadLine() ?? "";
+
+            var results = _service.SearchContactsByName(name).ToList();
+
+            if (!results.Any())
+            {
+                Console.WriteLine("No contacts found.");
+                return;
+            }
+
+            PaginateContacts(results);
+        }
+
+        private void FilterContacts()
+        {
+            Console.Write("From date (yyyy-MM-dd): ");
+            if (!DateTime.TryParseExact(Console.ReadLine(),
+                "yyyy-MM-dd",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.AssumeUniversal,
+                out var from))
+            {
+                Console.WriteLine("Invalid date.");
+                return;
+            }
+
+            Console.Write("To date (yyyy-MM-dd): ");
+            if (!DateTime.TryParseExact(Console.ReadLine(),
+                "yyyy-MM-dd",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.AssumeUniversal,
+                out var to))
+            {
+                Console.WriteLine("Invalid date.");
+                return;
+            }
+
+            var results = _service.FilterContactsByDate(from, to).ToList();
+
+            if (!results.Any())
+            {
+                Console.WriteLine("No contacts found.");
+                return;
+            }
+
+            PaginateContacts(results);
+        }
+
+        private async Task SaveContacts()
+        {
+            await _service.SaveAsync();
+            Console.WriteLine("Contacts saved.");
+        }
+
+        private void DisplayContact(Contact contact)
+        {
+            Console.WriteLine($"Id: {contact.Id}");
+            Console.WriteLine($"Name: {contact.Name}");
+            Console.WriteLine($"Phone: {contact.Phone}");
+            Console.WriteLine($"Email: {contact.Email}");
+            Console.WriteLine($"CreatedAt: {contact.CreatedAt:u}");
+        }
+
+        private void DisplayContacts(List<Contact> contacts, int page, int pageSize)
+        {
+            int totalPages = (contacts.Count + pageSize - 1) / pageSize;
+
+            var pageData = contacts
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
+
+            Console.WriteLine($"Page {page}/{totalPages}");
+
+            foreach (var c in pageData)
+            {
+                Console.WriteLine(
+                    $"[{c.Id}] {c.Name} | {c.Phone} | {c.Email} | {c.CreatedAt:u}");
+            }
+        }
+
+        private void PaginateContacts(List<Contact> contacts)
+        {
+            const int pageSize = 10;
+            int page = 1;
+            int totalPages = (contacts.Count + pageSize - 1) / pageSize;
+
+            while (true)
+            {
+                Console.Clear();
+                DisplayContacts(contacts, page, pageSize);
+                Console.WriteLine("n: next | p: previous | q: quit");
+
+                var key = Console.ReadKey(true).KeyChar;
+
+                if (key == 'n' && page < totalPages) page++;
+                else if (key == 'p' && page > 1) page--;
+                else if (key == 'q') break;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\bin\Debug\net8.0\ContactManagerCLI.deps.json
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\bin\Debug\net8.0\ContactManagerCLI.dll
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\bin\Debug\net8.0\ContactManagerCLI.pdb
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.AssemblyInfo.cs
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.dll
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\refint\ContactManagerCLI.dll
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.pdb
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ref\ContactManagerCLI.dll
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\bin\Debug\net8.0\ContactManagerCLI.exe
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\bin\Debug\net8.0\ContactManagerCLI.runtimeconfig.json
+C:\Users\hp\source\repos\ALGO-part-c\ContactManagerCLI\ContactManagerCLI\obj\Debug\net8.0\ContactManagerCLI.genruntimeconfig.cache

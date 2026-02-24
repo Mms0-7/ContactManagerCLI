@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\core\\contactmanagerapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\core\\contactmanagerapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\repositories\\jsoncontactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\repositories\\jsoncontactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\contactmanagercli.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\contactmanagercli.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|c:\\users\\hp\\source\\repos\\algo-part-c\\contactmanagercli\\contactmanagercli\\interfaces\\icontactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB455AF-A7D5-414F-8C4B-E20C5DE03729}|ContactManagerCLI\\ContactManagerCLI.csproj|solutionrelative:contactmanagercli\\interfaces\\icontactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{55f480fa-fbef-4386-8c1c-ea8d10c9f542}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ContactManagerCLI",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\ContactManagerCLI.csproj",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\ContactManagerCLI.csproj",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\ContactManagerCLI.csproj",
+              "RelativeToolTip": "ContactManagerCLI\\ContactManagerCLI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-24T08:52:49.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IContactRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Interfaces\\IContactRepository.cs",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\Interfaces\\IContactRepository.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Interfaces\\IContactRepository.cs",
+              "RelativeToolTip": "ContactManagerCLI\\Interfaces\\IContactRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:51:29.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JsonContactRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Repositories\\JsonContactRepository.cs",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\Repositories\\JsonContactRepository.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Repositories\\JsonContactRepository.cs",
+              "RelativeToolTip": "ContactManagerCLI\\Repositories\\JsonContactRepository.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAuwLkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:51:29.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Program.cs",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Program.cs",
+              "RelativeToolTip": "ContactManagerCLI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:51:28.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContactManagerApp.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Core\\ContactManagerApp.cs",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\Core\\ContactManagerApp.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Core\\ContactManagerApp.cs",
+              "RelativeToolTip": "ContactManagerCLI\\Core\\ContactManagerApp.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:51:28.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Contact.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Models\\Contact.cs",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\Models\\Contact.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Models\\Contact.cs",
+              "RelativeToolTip": "ContactManagerCLI\\Models\\Contact.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:51:28.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContactService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Services\\ContactService.cs",
+              "RelativeDocumentMoniker": "ContactManagerCLI\\Services\\ContactService.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\ALGO-part-c\\ContactManagerCLI\\ContactManagerCLI\\Services\\ContactService.cs",
+              "RelativeToolTip": "ContactManagerCLI\\Services\\ContactService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:51:28.835Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 80,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
