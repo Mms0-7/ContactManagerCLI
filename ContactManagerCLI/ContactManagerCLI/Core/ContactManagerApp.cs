@@ -11,6 +11,8 @@ namespace ContactManagerCLI.Core
     public class ContactManagerApp
     {
         private readonly ContactService _service;
+        private const int DefaultPageSize = 5; // load 5 contacts per page
+
         public ContactManagerApp(ContactService service)
         {
             _service = service;
@@ -18,12 +20,13 @@ namespace ContactManagerCLI.Core
 
         public async Task Run()
         {
-
             var existing = _service.GetAllContacts().ToList();
             if (existing.Any())
             {
                 Console.WriteLine("Existing Contacts:");
-                DisplayContacts(existing, 1, 10);
+                int totalPagesExisting = (existing.Count + DefaultPageSize - 1) / DefaultPageSize;
+                var firstPage = existing.Take(DefaultPageSize).ToList();
+                DisplayContacts(firstPage, 1, DefaultPageSize, totalPagesExisting);
             }
 
             while (true)
@@ -94,7 +97,6 @@ namespace ContactManagerCLI.Core
             }
 
             _service.AddContact(contact);
-            
 
             Console.WriteLine("Contact added.");
         }
@@ -138,7 +140,6 @@ namespace ContactManagerCLI.Core
             }
 
             _service.UpdateContact(contact);
-            
 
             Console.WriteLine("Contact updated.");
         }
@@ -153,7 +154,7 @@ namespace ContactManagerCLI.Core
             }
 
             _service.DeleteContact(id);
-            await _service.SaveAsync();
+            //await _service.SaveAsync();
 
             Console.WriteLine("Contact deleted (if existed).");
         }
@@ -179,15 +180,31 @@ namespace ContactManagerCLI.Core
 
         private void ListContacts()
         {
-            var contacts = _service.GetAllContacts().ToList();
+            int page = 1;
+            int pageSize = DefaultPageSize;
+            int totalCount = _service.GetTotalCount();
+            int totalPages = (totalCount + pageSize - 1) / pageSize;
 
-            if (!contacts.Any())
+            while (true)
             {
-                Console.WriteLine("No contacts found.");
-                return;
-            }
+                Console.Clear();
+                var pageContacts = _service.GetContactsPage(page, pageSize).ToList();
 
-            PaginateContacts(contacts);
+                if (!pageContacts.Any())
+                {
+                    Console.WriteLine("No contacts found.");
+                    return;
+                }
+
+                DisplayContacts(pageContacts, page, pageSize, totalPages);
+                Console.WriteLine($"n: next | p: previous | q: quit | page {page}/{totalPages}");
+
+                var key = Console.ReadKey(true).KeyChar;
+
+                if (key == 'n' && page < totalPages) page++;
+                else if (key == 'p' && page > 1) page--;
+                else if (key == 'q') break;
+            }
         }
 
         private void SearchContacts()
@@ -256,33 +273,31 @@ namespace ContactManagerCLI.Core
             Console.WriteLine($"CreatedAt: {contact.CreatedAt:u}");
         }
 
-        private void DisplayContacts(List<Contact> contacts, int page, int pageSize)
+        private void DisplayContacts(List<Contact> contacts, int page, int pageSize, int totalPages)
         {
-            int totalPages = (contacts.Count + pageSize - 1) / pageSize;
-
-            var pageData = contacts
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize);
-
             Console.WriteLine($"Page {page}/{totalPages}");
 
-            foreach (var c in pageData)
+            foreach (var c in contacts)
             {
-                Console.WriteLine(
-                    $"[{c.Id}] {c.Name} | {c.Phone} | {c.Email} | {c.CreatedAt:u}");
+                Console.WriteLine($"Name: {c.Name} | Phone: {c.Phone} | Email: {c.Email} | Id: {c.Id}");
             }
         }
 
         private void PaginateContacts(List<Contact> contacts)
         {
-            const int pageSize = 10;
+            const int pageSize = DefaultPageSize;
             int page = 1;
             int totalPages = (contacts.Count + pageSize - 1) / pageSize;
 
             while (true)
             {
                 Console.Clear();
-                DisplayContacts(contacts, page, pageSize);
+                var pageData = contacts
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToList();
+
+                DisplayContacts(pageData, page, pageSize, totalPages);
                 Console.WriteLine("n: next | p: previous | q: quit");
 
                 var key = Console.ReadKey(true).KeyChar;

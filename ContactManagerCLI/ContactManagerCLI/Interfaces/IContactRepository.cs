@@ -16,5 +16,9 @@ namespace ContactManagerCLI.Interfaces
         IEnumerable<Contact> FilterByDate(DateTime from, DateTime to);
         Task SaveAsync();
         Task LoadAsync();
+
+        // Pagination support
+        IEnumerable<Contact> GetPage(int page, int pageSize);
+        int GetTotalCount();
     }
 }
