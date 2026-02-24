@@ -67,5 +67,15 @@ namespace ContactManagerCLI.Services
                 return false;
             return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
+
+        public async System.Threading.Tasks.Task SaveAsync()
+        {
+            await _repository.SaveAsync();
+        }
+
+        public async System.Threading.Tasks.Task LoadAsync()
+        {
+            await _repository.LoadAsync();
+        }
     }
 }

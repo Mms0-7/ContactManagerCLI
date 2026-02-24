@@ -11,7 +11,6 @@ namespace ContactManagerCLI.Core
     public class ContactManagerApp
     {
         private readonly ContactService _service;
-
         public ContactManagerApp(ContactService service)
         {
             _service = service;
@@ -19,7 +18,6 @@ namespace ContactManagerCLI.Core
 
         public async Task Run()
         {
-            await _service.LoadAsync();
 
             var existing = _service.GetAllContacts().ToList();
             if (existing.Any())
