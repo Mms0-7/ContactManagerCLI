@@ -163,19 +163,6 @@ dotnet run
 
 ---
 
-## 🧪 Suggested Improvements
-
-- Add structured logging (Serilog / NLog)
-- Add validation layer
-- Remove silent catch blocks
-- Make storage directory configurable
-- Add unit tests (xUnit / NUnit)
-- Add dependency injection
-- Add Docker support
-- Build REST API version
-
----
-
 ## 📊 Performance Notes
 
 | Operation            | Complexity |
